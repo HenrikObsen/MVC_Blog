@@ -1,0 +1,35 @@
+﻿@using RepoBlog.Models.BaseModels
+@using RepoBlog.Models.ViewModels
+@model List<BlogIndex>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Monster Blog</h2>
+
+@foreach (BlogIndex bi in Model)
+{
+    <table>
+        
+        <tr>
+            <td>
+                <b>@bi.Post.Overskrift</b>
+                <br/>
+                @bi.Post.Tekst
+            </td>
+            <td>
+                @if (bi.Billeder.Count > 0)
+                {
+                    <img src="/Content/Images/@bi.Billeder[0].Filnavn"/>
+                }
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="/Blog/Edit/@bi.Post.ID/">Rediger</a> <a href="/Blog/Delete/@bi.Post.ID/">Slet</a></td>
+        </tr>
+    </table>
+
+    <hr/>
+}
