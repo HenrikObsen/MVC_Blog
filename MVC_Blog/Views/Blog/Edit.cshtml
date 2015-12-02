@@ -1,0 +1,22 @@
+﻿@model RepoBlog.Models.BaseModels.Post
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+<form name="myForm" action="/Blog/Edit/" enctype="multipart/form-data" method="post">
+    Overskrift<br />
+    <input id="Overskrift" name="Overskrift" type="text" value="@Model.Overskrift" />
+    <br />
+    Tekst<br />
+    <textarea name="Tekst">@Model.Tekst</textarea>
+    <br />
+    Forfatter<br />
+    <input id="Forfatter" name="Forfatter" type="text" value="@Model.Forfatter" />
+    <br />
+    <input id="Submit1" type="submit" value="Gem" />
+    @ViewBag.MSG
+    <input id="ID" type="hidden" name="ID" value="@Model.ID" />
+</form>

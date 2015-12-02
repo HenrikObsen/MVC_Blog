@@ -1,4 +1,5 @@
-﻿namespace RepoBlog.Models.BaseModels
+﻿using System.ComponentModel.DataAnnotations;
+namespace RepoBlog.Models.BaseModels
 {
     public class Billede
     {
