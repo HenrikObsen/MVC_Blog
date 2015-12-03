@@ -1,0 +1,15 @@
+﻿@model int
+@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Upload</h2>
+<form name="myForm" action="/Blog/Upload/" enctype="multipart/form-data" method="post">
+
+    <input id="File1" type="file" name="fil" />
+    <input id="Hidden1" type="hidden" name="id" value="@Model"/>
+    <input id="Submit1" type="submit" value="Upload" />
+</form>
+
+

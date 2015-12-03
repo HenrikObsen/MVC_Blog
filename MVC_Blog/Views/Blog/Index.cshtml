@@ -16,18 +16,18 @@
             <td>
                 <b>@bi.Post.Overskrift</b>
                 <br/>
-                @bi.Post.Tekst
+                @Html.Raw(bi.Post.Tekst)
             </td>
             <td>
                 @if (bi.Billeder.Count > 0)
                 {
-                    <img src="/Content/Images/@bi.Billeder[0].Filnavn"/>
+                    <img src="/Content/Images/@bi.Billeder[bi.Billeder.Count-1].Filnavn"/>
                 }
 
             </td>
         </tr>
         <tr>
-            <td colspan="2"><a href="/Blog/Edit/@bi.Post.ID/">Rediger</a> <a href="/Blog/Delete/@bi.Post.ID/">Slet</a></td>
+            <td colspan="2"><a href="/Blog/Upload/@bi.Post.ID/">Upload</a> <a href="/Blog/Edit/@bi.Post.ID/">Rediger</a> <a href="/Blog/Delete/@bi.Post.ID/">Slet</a></td>
         </tr>
     </table>
 
